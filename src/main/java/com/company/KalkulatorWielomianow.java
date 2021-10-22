@@ -1,8 +1,8 @@
 package com.company;
 
 import com.company.enums.WyborUzytkownika;
-import komunikacjaZUzytkownikiem.PobieranieDanychOdUzytkownika;
-import komunikacjaZUzytkownikiem.Wybor;
+import com.company.iostream.PobieranieDanychOdUzytkownika;
+import com.company.iostream.Wybor;
 
 import java.util.Scanner;
 import java.util.function.Supplier;

@@ -1,4 +1,4 @@
-package komunikacjaZUzytkownikiem;
+package com.company.iostream;
 
 import java.util.Scanner;
 
