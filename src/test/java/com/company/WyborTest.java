@@ -1,6 +1,7 @@
-package com.company.iostream;
+package com.company;
 
 import com.company.enums.WyborUzytkownika;
+import com.company.iostream.Wybor;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mockito;

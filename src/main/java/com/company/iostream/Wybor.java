@@ -13,10 +13,6 @@ public class Wybor {
     public Supplier<WyborUzytkownika> intSupplier;
 
     public WyborUzytkownika choose() {
-        System.out.println("Wprowdź sposób wprowadzania danych: ");
-        System.out.println("1 - Użytkownik wprowadza dane");
-        System.out.println("2 - Dane pobrane z linii poleceń");
-        System.out.print("Twój wybór: ");
 
         WyborUzytkownika numerMetody;
         numerMetody = intSupplier.get();

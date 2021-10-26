@@ -14,14 +14,14 @@ class KowerterWejsciaTest {
     @Test
     void konwerterWejsciaOdUzytkownika() {
 
-        Supplier<WyborUzytkownika> choose = KonwerterWejscia.getWyborUzytkownikaSupplier(1);
+        Supplier<WyborUzytkownika> choose = KonwerterWejscia.getWyborUzytkownikaSupplier( () ->1);
 
         assertEquals(WyborUzytkownika.PODANEPRZEZUZYTKOWNIKA, choose.get(), "Opcja nr 1");
     }
 
     @Test
     void konwerterWejsciaZLiniiPolecen() {
-        Supplier<WyborUzytkownika> choose = KonwerterWejscia.getWyborUzytkownikaSupplier(2);
+        Supplier<WyborUzytkownika> choose = KonwerterWejscia.getWyborUzytkownikaSupplier(() ->2);
 
         assertEquals(WyborUzytkownika.PODANEZLINIIPOLECEN, choose.get(), "Opcja nr 2");
     }
@@ -30,7 +30,7 @@ class KowerterWejsciaTest {
     void konwerterWejsciaBladDodatnia() {
         int randomNum = getRandomNumDodatnia();
 
-        Supplier<WyborUzytkownika> choose = KonwerterWejscia.getWyborUzytkownikaSupplier(randomNum);
+        Supplier<WyborUzytkownika> choose = KonwerterWejscia.getWyborUzytkownikaSupplier( () -> randomNum);
 
         assertEquals(WyborUzytkownika.BLAD, choose.get(), "Blad");
     }
@@ -52,7 +52,7 @@ class KowerterWejsciaTest {
     void konwerterWejsciaBladNieDodatnia() {
         int randomNumber = getRandomNumNieDodatnia();
 
-        Supplier<WyborUzytkownika> choose = KonwerterWejscia.getWyborUzytkownikaSupplier(randomNumber);
+        Supplier<WyborUzytkownika> choose = KonwerterWejscia.getWyborUzytkownikaSupplier(() -> randomNumber);
         System.out.print(randomNumber);
         assertEquals(WyborUzytkownika.BLAD, choose.get(), "Blad");
     }

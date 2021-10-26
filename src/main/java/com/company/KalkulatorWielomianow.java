@@ -10,15 +10,16 @@ import java.util.function.Supplier;
 public class KalkulatorWielomianow {
 
     public static void main(String[] args) {
+        System.out.println("Wprowdź sposób wprowadzania danych: ");
+        System.out.println("1 - Użytkownik wprowadza dane");
+        System.out.println("2 - Dane pobrane z linii poleceń");
+        System.out.print("Twój wybór: ");
+
         Wybor wybory = new Wybor();
-
-        Scanner scanner = new Scanner(System.in);
-        WyborUzytkownika wybor1 = wybory.choose();
-
-        int i = scanner.nextInt();
-        Supplier<WyborUzytkownika> intSupplier = KonwerterWejscia.getWyborUzytkownikaSupplier(i);
-
+        Supplier<WyborUzytkownika> intSupplier = KonwerterWejscia.getWyborUzytkownikaSupplier( () -> new Scanner(System.in).nextInt());
         wybory.setIntSupplier(intSupplier);
+
+        WyborUzytkownika wybor1 = wybory.choose();
 
         switch (wybor1) {
             case PODANEPRZEZUZYTKOWNIKA:
